@@ -6,6 +6,15 @@ if(!isset($_SESSION['logged'])){
     exit();
 }
 
+if(isset($_GET['addQuotes'])){
+    include 'form.php';
+    exit();
+}
+
+if(isset($_GET['allQuotes'])){
+    include 'allQuotes.php';
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +37,8 @@ if(!isset($_SESSION['logged'])){
 
 <p>Co chcesz zrobić?</p>
 <button type='button' class="api__btn">Pobierz randomowy cytat</button>
-<a href="">Pokaż moją bazę cytatów różnych</a>
-<button>Dodaj nowy cytat do mojej bazy</button>
+<a href="?allQuotes">Pokaż moją bazę cytatów różnych</a>
+<a href="?addQuotes">Dodaj nowy cytat do mojej bazy</a>
 <div class="random__quote">
 <p class="random__quote--text"></p>
 <p class="random__quote--author"></p>
