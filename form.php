@@ -36,7 +36,7 @@ if(isset($_POST['new__quote--text'])){
                     throw new Exception($connect->error);
                 }
             }
-
+            $connect->close();
         }
     }
     catch(Exception $e) {
