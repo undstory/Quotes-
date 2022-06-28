@@ -11,17 +11,22 @@ try {
     if($connect->connect_errno!=0) {
         throw new Exception(mysqli_connect_errno());
     } else {
-        $result = $connect->query("SELECT quote FROM myQuotes");
+        $result = $connect->query("SELECT * FROM myQuotes");
         while ($row = $result->fetch_assoc()){
-            $quotes[] =$row['quote'];
+            $quotes[]=array('id'=>$row['id'], 'quote'=>$row['quote'], 'author'=>$row['author']);
         }
+        $connect->close();
     }
+
+
 }
 
 catch(Exception $e) {
     echo '<span style="color: red;">Bład serwera! Przpraszamy za niedogodności, spróbuj ponownie później.</span>';
     echo '<br />Informacja deweloperska: '.$e;
 }
+
+
 ?>
 
 
@@ -36,12 +41,23 @@ catch(Exception $e) {
 </head>
 <body>
     <h2>Wszytskie cytaty</h2>
+    <a href="quotes.php">Wróć do strony glównej</a>
 
 <?php foreach ($quotes as $quote): ?>
-<p>
-    <?php echo htmlspecialchars($quote, ENT_QUOTES, 'UTF-8'); ?>
+    <form action="deleteQuote.php" method="post">
+        <blockquote>
 
+        <p>
+     <?php echo htmlspecialchars($quote['quote'], ENT_QUOTES, 'UTF-8'); ?>
+     <?php echo htmlspecialchars($quote['author'], ENT_QUOTES, 'UTF-8'); ?>
+     <input type="hidden" name="id" value="<?php echo $quote['id']; ?>" />
+     <input type="submit" value="Usuń cytat" />
 </p>
+        </blockquote>
+
+    </form>
+
+
 <?php endforeach; ?>
 </body>
 </html>

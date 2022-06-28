@@ -15,6 +15,8 @@ if(isset($_GET['allQuotes'])){
     include 'allQuotes.php';
     exit();
 }
+
+
 ?>
 
 <!DOCTYPE html>

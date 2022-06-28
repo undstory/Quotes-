@@ -74,6 +74,7 @@ if(isset($_POST['new__quote--text'])){
 </head>
 <body>
 <div class="insert__quote">
+<a href="quotes.php">Wróć do strony glównej</a>
     <form  method="post">
     <label for="new__quote--text">Wpisz treść cytatu</label>
     <textarea id="new__quote--text" name="new__quote--text" rows="3" cols="40"></textarea>
