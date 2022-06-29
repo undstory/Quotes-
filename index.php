@@ -27,7 +27,7 @@ if((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
     <div class="main-container">
         <main class="container">
             <div class="intro">
-                <h1 class="intro__title">Hello Quotes</h2>
+                <h2 class="intro__title">Hello Quotes</h2>
 
                     <form class="intro__form" action="login.php" method="post">
 

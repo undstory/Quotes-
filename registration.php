@@ -20,7 +20,7 @@ if(isset($_POST['email'])){
 
     if(ctype_alnum($nickname) == false) {
         $is_ok = false;
-        $_SESSION['e_nickname']="Nickname może składać się tylko z liter i cyfr (bez polskich znaków)";
+        $_SESSION['e_nickname']="Nazwa użytkownika może składać się tylko z liter i cyfr (bez polskich znaków)";
     }
 
     if((filter_var($emailB, FILTER_VALIDATE_EMAIL) == false) || ($emailB!=$email)) {
@@ -108,54 +108,60 @@ if(isset($_POST['email'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/css/style.css">
     <title>Quotes</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-    <style>
-        .error {
-            color: red;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+
 </head>
 <body>
+<div class="main-container">
+        <main class="container">
+            <div class="intro">
+                <h2 class="intro__title"><a href="index.php">Hello Quotes</a></h2>
+                <form class="register__form" method="post">
+                    <input class="intro__input register__input--nick" type="text" name="nickname" placeholder="Nazwa użytkownika" />
+                        <?php
+                        if(isset($_SESSION['e_nickname'])) {
+                            echo '<div class="register__error register__input--nickE">'.$_SESSION['e_nickname'].'</div>';
+                            unset($_SESSION['e_nickname']);
+                        }
+                        ?>
+                    <input class="intro__input register__input--email" type="text" name="email" placeholder="Email" />
+                        <?php
+                            if(isset($_SESSION['e_email'])) {
+                                echo '<div class="register__error register__input--emailE">'.$_SESSION['e_email'].'</div>';
+                                unset($_SESSION['e_email']);
+                            }
+                            ?>
 
-<form method="post">
-    <label>Nick</label><input type="text" name="nickname" /><br />
-    <?php
-    if(isset($_SESSION['e_nickname'])) {
-        echo '<div class="error">'.$_SESSION['e_nickname'].'</div>';
-        unset($_SESSION['e_nickname']);
-    }
-    ?>
-    <label>Email</label><input type="text" name="email" /><br />
-<?php
-    if(isset($_SESSION['e_email'])) {
-        echo '<div class="error">'.$_SESSION['e_email'].'</div>';
-        unset($_SESSION['e_email']);
-    }
-    ?>
+                    <input class="intro__input register__input--pass1" type="password" name="password1" placeholder="Hasło" /><br />
 
-    <label>Hasło</label><input type="password" name="password1" /><br />
+                        <?php
+                        if(isset($_SESSION['e_password'])) {
+                            echo '<div class="register__error register__input--passE">'.$_SESSION['e_password'].'</div>';
+                            unset($_SESSION['e_password']);
+                        }
+                        ?>
+                    <input class="intro__input register__input--pass2"  type="password" name="password2" placeholder="Powtórz hasło" /><br />
+                    <label class="register__input--check" ><input class="register__checkbox" type="checkbox" name="regimen" />Akceptuję regulamin</label>
+                        <?php
+                        if(isset($_SESSION['e_regimen'])) {
+                            echo '<div class="register__error register__input--checkE">'.$_SESSION['e_regimen'].'</div>';
+                            unset($_SESSION['e_regimen']);
+                        }
+                        ?>
 
-    <?php
-    if(isset($_SESSION['e_password'])) {
-        echo '<div class="error">'.$_SESSION['e_password'].'</div>';
-        unset($_SESSION['e_password']);
-    }
-    ?>
-    <label>Powtórz hasło</label><input type="password" name="password2" /><br />
-    <label><input type="checkbox" name="regimen" />Akceptuję regulamin</label>
-    <?php
-    if(isset($_SESSION['e_regimen'])) {
-        echo '<div class="error">'.$_SESSION['e_regimen'].'</div>';
-        unset($_SESSION['e_regimen']);
-    }
-    ?>
-
-    <button type="submit">Zarejestruj się</button>
-</form>
+                    <button class="intro__button register__input--button" type="submit">Zarejestruj się</button>
+                </form>
+            </div>
+        </main>
+</div>
 
 </body>
 </html>
