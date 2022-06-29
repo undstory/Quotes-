@@ -2,15 +2,16 @@
 
 const apiBtn = document.querySelector('.api__btn');
 
+
+
+window.addEventListener('DOMContentLoaded', getQuote());
+
+
 const quoteTextRandom = document.querySelector('.random__quote--text');
 const quoteAuthorRandom = document.querySelector('.random__quote--author');
 
 
-apiBtn.addEventListener('click', getQuote);
-
-
 function getQuote() {
-    console.log("Działam");
     const url = "https://quote-garden.herokuapp.com/api/v3/quotes/random"
 
 
@@ -27,7 +28,12 @@ fetch(url)
         quoteAuthorRandom.textContent = quoteAuthor;
 
     }
+
     )
+    .catch(error => {
+        quoteTextRandom.textContent = "Przepraszamy, brak połączenia z zewnętrznym API";
+        console.log(error);
+    })
 }
 
 

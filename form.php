@@ -31,7 +31,7 @@ if(isset($_POST['new__quote--text'])){
                 if($connect->query("INSERT INTO myQuotes VALUES (NULL, '$newQuoteText', '$newQuoteAuthor')"))
                 {
                      $_SESSION['successful'] = true;
-                     header('Location: quotes.php');
+                     header('Location: allQuotes.php');
                 } else {
                     throw new Exception($connect->error);
                 }

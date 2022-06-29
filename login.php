@@ -46,7 +46,7 @@ if($connect->connect_errno!=0) {
             }
 
         } else {
-            $_SESSION['error']='<span style="color: red">Nieprawidłowy login lub hasło</span>';
+            $_SESSION['error']='<span>Nieprawidłowy login lub hasło</span>';
             header('Location: index.php');
         }
     }

@@ -17,7 +17,7 @@ try {
 
         $connect->query("UPDATE myQuotes SET quote='$newQuoteText', author='$newQuoteAuthor' WHERE id='$id'");
 
-        header('Location: quotes.php');
+        header('Location: allQuotes.php');
 
         $connect->close();
     }

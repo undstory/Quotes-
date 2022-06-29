@@ -59,6 +59,7 @@ catch(Exception $e) {
 <body>
     <h2>Wszytskie cytaty</h2>
     <a href="quotes.php">Wróć do strony glównej</a>
+    <a href="form.php">Dodaj nowy cytat</a>
     <?php
         if(isset($_SESSION['e_empty'])){
             echo '<div class="error">'.$_SESSION['e_empty'].'</div>';
