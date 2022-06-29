@@ -22,7 +22,7 @@ else {
 <body>
 
     <h2>HEllo Quotes</h2>
-    <span>Dzięki za rejestrację w aplikacji - zaloguj się teraz na swoje konto</span>
+    <span>Dzięki za rejestrację w aplikacji!</span><br />>
     <span>Zaloguj się na swoje konto</span>
     <form action="login.php" method="post">
         <label>Login</label><input type="text" name="login" />
