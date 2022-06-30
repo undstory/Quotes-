@@ -31,7 +31,7 @@ if((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
 
                     <form class="intro__form" action="login.php" method="post">
 
-                        <input class="intro__input"type="text" name="login" placeholder="Nazwa użytkownika" />
+                        <input class="intro__input" type="text" name="login" placeholder="Nazwa użytkownika" />
 
                         <input class="intro__input" type="password" name="password" placeholder="Hasło" />
                         <button class="intro__button" type="submit">Zaloguj się</button>
@@ -46,7 +46,7 @@ if((isset($_SESSION['logged'])) && ($_SESSION['logged'] == true)) {
     ?>
                         <p>Jeśli nie masz konta - <a href="registration.php" class="intro__register">zarejestruj się</a><p/>
             </div>
-
+            <footer class="footer">Design&develope by undstory</footer>
         </main>
 
     </div>

@@ -160,6 +160,7 @@ if(isset($_POST['email'])){
                     <button class="intro__button register__input--button" type="submit">Zarejestruj się</button>
                 </form>
             </div>
+            <footer class="footer">Design&develope by undstory</footer>
         </main>
 </div>
 

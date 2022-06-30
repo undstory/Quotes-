@@ -64,6 +64,10 @@
             color: $yellow;
         }
     }
+
+    &__info {
+        margin-bottom: 1rem;
+    }
 }
 
 @media all and (max-width: $tabletWidth){
