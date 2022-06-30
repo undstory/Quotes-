@@ -102,3 +102,30 @@
 
 }
 
+@media all and (max-width: $mobileWidth) {
+
+    .intro {
+        &__input {
+            width: 25rem;
+        }
+
+        &__button {
+            height: 6rem;
+            width: 20rem;
+        }
+        &__button.register__input--button {
+
+            height: 6rem;
+            width: 20rem;
+        }
+    }
+}
+
+@media all and (max-width: 350px) {
+
+    .intro {
+        &__title {
+            font-size: 6rem;
+        }
+    }
+}

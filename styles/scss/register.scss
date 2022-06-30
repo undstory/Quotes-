@@ -2,7 +2,7 @@
     &__form {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: (1fr, 30px,30px,1fr,30px,1fr,30px,1fr);
+      grid-template-rows: 1fr 30px 30px 1fr 30px 1fr 30px 1fr;
     }
 
     &__error {
@@ -38,6 +38,7 @@
             grid-row-start: 2;
             grid-row-end: 3;
             justify-self: start;
+            margin: 0 1rem;
         }
 
         &--emailE {
@@ -100,4 +101,101 @@
             margin-top: 2rem;
         }
     }
+}
+
+@media all and (max-width: $mobileWidth) {
+    .register {
+        &__form {
+            grid-template-columns: minmax(200px, 1fr);
+            grid-template-rows: 1fr 30px 1fr 30px 1fr 1fr 30px 30px 1fr 30px 1fr;
+            margin: 0 1rem;
+          }
+
+          &__input {
+            &--nick {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                justify-self: center;
+            }
+
+            &--email {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                justify-self: center;
+            }
+
+            &--nickE {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                justify-self: start;
+                margin: 0 1rem;
+            }
+
+            &--emailE {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 4;
+                grid-row-end: 5;
+                justify-self: start;
+            }
+
+            &--pass1 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 5;
+                grid-row-end: 6;
+                justify-self: center;
+            }
+
+            &--pass2 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 6;
+                grid-row-end: 7;
+                justify-self: center;
+            }
+
+            &--passE {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 7;
+                grid-row-end: 8;
+                justify-self: start;
+            }
+
+            &--check {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 8;
+                grid-row-end: 9;
+                justify-self: center;
+                margin-top: 2rem;
+            }
+
+            &--checkE {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 9;
+                grid-row-end: 10;
+                justify-self: start;
+                margin: 2rem;
+            }
+
+            &--button {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 10;
+                grid-row-end: 11;
+                justify-self: center;
+                padding: 1.8rem 2rem;
+                margin-top: 2rem;
+            }
+    }
+}
 }
