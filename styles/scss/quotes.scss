@@ -5,6 +5,12 @@
         background-color: $black;
         color: $white;
         min-height: 100vh;
+
+        &--img {
+            background-image: url("../../images/slice1.png");
+            background-position: left bottom;
+            background-repeat: no-repeat;
+        }
     }
 
     &__nav {

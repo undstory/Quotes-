@@ -1,0 +1,50 @@
+.allQuotes {
+    &__blockquote {
+        margin: 2rem 0;
+    }
+
+
+    &__text {
+        font-size: 2rem;
+        font-style: italic;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+
+    &__box {
+        padding-bottom: 3rem;
+    }
+
+    &__author {
+        margin-bottom: 1rem;
+    }
+
+    &__btns {
+        display: flex;
+    }
+
+    &__btn {
+        display: block;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding: .5rem .8rem;
+        margin: 1rem 1rem 1rem 0;
+        color: $black;
+        cursor: pointer;
+        background-color: $yellow;
+
+        &[type=submit] {
+            outline: none;
+            border: none;
+
+            &:hover {
+                color: $red;
+            }
+        }
+
+        &:hover {
+            color: $lightGreen;
+            background-color: transparent;
+        }
+    }
+}

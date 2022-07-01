@@ -1,6 +1,5 @@
 <?php
 
-
 require_once "connect.php";
 // // mysqli_report(MYSQLI_REPORT_STRICT);
 // $is_ok = false;
@@ -54,36 +53,64 @@ catch(Exception $e) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wszystkie cytaty</title>
+    <script src="scripts.js" defer async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
+<script
+      src="https://kit.fontawesome.com/220bbdbf50.js"
+      crossorigin="anonymous"
+    ></script>
+<link rel="stylesheet" href="styles/css/style.css">
+    <title>Quotes</title>
 </head>
 <body>
-    <h2>Wszytskie cytaty</h2>
-    <a href="quotes.php">Wróć do strony glównej</a>
-    <a href="form.php">Dodaj nowy cytat</a>
+<div class="quotes__container">
+<main class="container">
+    <nav class="quotes__nav">
+        <h2 class="intro__title">Hello Quotes</a></h2>
+        <span>
+            <?php
+echo "<a href='logout.php' class='quotes__logout'>Wyloguj się!</a>";
+        ?>
+        </span>
+    </nav>
+    <h3 class="quotes__subtitle">Wszystkie cytaty</h3>
+    <ul class="quotes__btns">
+        <li><a class="quotes__link" href="quotes.php">Wróć do strony glównej</a></li>
+        <li><a class="quotes__link" href="form.php">Dodaj nowy cytat</a></li>
+    </ul>
+
+
     <?php
         if(isset($_SESSION['e_empty'])){
             echo '<div class="error">'.$_SESSION['e_empty'].'</div>';
             unset($_SESSION['e_empty']);
         }
     ?>
-    <?php
 
-  foreach ($quotes as $quote): ?>
+    <?php foreach ($quotes as $quote): ?>
+        <div class="allQuotes__box">
             <form action="deleteQuote.php" method="post">
-                <blockquote>
-
-                <p>
-            <?php echo htmlspecialchars($quote['quote'], ENT_QUOTES, 'UTF-8'); ?>
-            <?php echo htmlspecialchars($quote['author'], ENT_QUOTES, 'UTF-8'); ?>
-            <input type="hidden" name="id" value="<?php echo $quote['id']; ?>" />
-            <a href="editQuote.php?id=<?php echo $quote['id']; ?>">Edytuj cytat</a>
-            <input type="submit" value="Usuń cytat" />
-        </p>
+                <blockquote class="allQuotes__blockquote">
+                    <p class="allQuotes__text"><?php echo htmlspecialchars($quote['quote'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <p class="allQuotes__author"><?php echo htmlspecialchars($quote['author'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <input type="hidden" name="id" value="<?php echo $quote['id']; ?>" />
+                    <div class="allQuotes__btns">
+                        <a a class="allQuotes__btn" href="editQuote.php?id=<?php echo $quote['id']; ?>">Edytuj cytat</a>
+                        <input a class="allQuotes__btn" type="submit" value="Usuń cytat" />
+                    </div>
                 </blockquote>
-
             </form>
+        </div>
+    <?php endforeach; ?>
 
 
-<?php endforeach; ?>
+
+  </main>
+
+  </div>
 </body>
 </html>

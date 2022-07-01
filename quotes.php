@@ -36,7 +36,7 @@ if(isset($_GET['allQuotes'])){
 </head>
 <body>
 <div class="quotes__container">
-<main class="container">
+<main class="container quotes__container--img">
     <nav class="quotes__nav">
         <h2 class="intro__title">Hello Quotes</a></h2>
         <span>

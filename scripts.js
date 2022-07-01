@@ -1,7 +1,6 @@
 
-
 const apiBtn = document.querySelector('.api__btn');
-
+let slideIndex = 1;
 
 
 window.addEventListener('DOMContentLoaded', getQuote());
@@ -12,7 +11,7 @@ const quoteAuthorRandom = document.querySelector('.random__quote--author');
 
 
 function getQuote() {
-    const url = "https://quote-garden.herokuapp.com/api/v3/quotes/random"
+    const url = "https://quote-garden.herokuapp.com/api/v3/quotes/random";
 
 
 fetch(url)
@@ -20,6 +19,7 @@ fetch(url)
 	.then(data => {
 
         const [ myQuote ] = data.data;
+        console.log(myQuote);
         return myQuote;
     })
     .then(myQuote => {
@@ -35,9 +35,3 @@ fetch(url)
         console.log(error);
     })
 }
-
-
-
-
-// getQuote();
-

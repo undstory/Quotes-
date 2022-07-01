@@ -53,7 +53,7 @@ html {
     max-width: $desktopWidth;
     margin: 0 auto;
     padding: 0 2rem;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     font-family: $mainFont;
   }
