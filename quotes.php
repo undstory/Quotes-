@@ -55,7 +55,6 @@ if(isset($_GET['allQuotes'])){
         <p class="random__quote--text"></p>
         <p class="random__quote--author"></p>
     </div>
-    <footer class="footer">Design&develope by undstory</footer>
 </main>
 </div>
 </body>

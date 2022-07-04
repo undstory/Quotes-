@@ -1,10 +1,10 @@
 .add {
-    &__quote {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    // &__quote {
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    // }
 
     &__form {
         display: flex;
@@ -39,7 +39,7 @@
     &__button {
         display: block;
         text-transform: uppercase;
-        margin: 1rem 1rem 1rem 0;
+        margin: 1rem 1rem 3rem 0;
         color: $black;
         outline: none;
         border: none;
@@ -53,6 +53,22 @@
             color: $black;
             background-color: $lightGreen;
 
+        }
+    }
+}
+
+@media all and (max-width: $mobileWidth) {
+    .add {
+        &__textarea, &__input {
+            width: 400px;
+        }
+    }
+}
+
+@media all and (max-width: 432px) {
+    .add {
+        &__textarea, &__input {
+            width: 300px;
         }
     }
 }
